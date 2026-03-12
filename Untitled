@@ -1,0 +1,17 @@
+# 関西就活 2026/04/26 公式サイト
+
+2026年4月26日(日)に開催されるキャリアイベントのランディングページです。
+
+## 開発環境
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+
+## デプロイ先
+GitHub: https://github.com/thinney-inc/kansai-shukatsu-2026-4-26
+Cloudflare Pages: https://career-summit-2026-4-26.pages.dev
+
+## 開発者
+- SF
+- THINNEY Inc.

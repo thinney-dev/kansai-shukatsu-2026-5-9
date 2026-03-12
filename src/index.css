@@ -1,0 +1,32 @@
+/* ▼▼▼ 1. @importは必ず一番上に書く ▼▼▼ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap');
+
+/* ▼▼▼ 2. その次にTailwindの記述 ▼▼▼ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ▼▼▼ 3. その他の設定（既存のコードがあればそのまま） ▼▼▼ */
+@layer base {
+  :root {
+    /* ... */
+  }
+}
+
+/* ... */
+
+/* ▼▼▼ 4. 一番下にアニメーション設定 ▼▼▼ */
+@keyframes loop-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-loop-scroll {
+  display: flex;
+  width: max-content;
+  animation: loop-scroll 30s linear infinite;
+}
+
+.animate-loop-scroll img {
+  max-width: none;
+}
