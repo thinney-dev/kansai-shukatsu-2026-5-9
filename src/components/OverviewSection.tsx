@@ -4,7 +4,7 @@ const OverviewSection = () => {
   const overviewItems = [
     {
       label: "開催日時",
-      content: "2026/04/26 (日) 13:00 ~ 18:30"
+      content: "2026/04/26 (日) 14:15 ~ 18:45"
     },
     {
       label: "開催場所",

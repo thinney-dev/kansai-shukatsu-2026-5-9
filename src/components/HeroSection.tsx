@@ -64,7 +64,7 @@ const HeroSection = () => {
              <div className="inline-flex items-center gap-2 md:gap-3">
                 <CalendarClock className="w-6 h-6 md:w-8 md:h-8 text-[#B8860B] drop-shadow-sm" />
                 <span className="text-2xl md:text-3xl font-serif font-bold text-[#0B1E46] tracking-widest drop-shadow-sm">
-                   4/26<span className="text-lg md:text-xl mx-1 text-[#0B1E46] opacity-80">(日)</span>13:00~
+                   5/9<span className="text-lg md:text-xl mx-1 text-[#0B1E46] opacity-80">(土)</span>13:00~
                 </span>
              </div>
           </div>
