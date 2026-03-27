@@ -45,9 +45,9 @@ const CompaniesSection = () => {
   const companies = [
     { 
       id: 1, 
-      name: "JCB", 
+      name: "Kubota", 
       tags: ["決済サービス", "国際ブランド"], 
-      logoImage: "/logo-JCB.png",
+      logoImage: "/logo-Kubota.png",
       url: "https://www.jcb.co.jp/?link_id=cojp_logo",
       details: {
         catchphrase: "日本発唯一の国際ブランドとして、世界の決済インフラを創る",

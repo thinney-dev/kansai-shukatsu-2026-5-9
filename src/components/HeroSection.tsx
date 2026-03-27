@@ -9,24 +9,17 @@ const images = [
   "/Herosection-2.png"
 ];
 
-// ▼▼▼ 4月LP用：メイン企業ロゴとその他の企業名リスト ▼▼▼
+// ▼▼▼ 5月LP用：メイン企業ロゴとその他の企業名リスト ▼▼▼
 const mainCompanies = [
   {
     id: "logo1",
-    name: "JCB", // 1社目の社名
-    // ▼ publicフォルダにある1社目の画像ファイル名に書き換えてください
-    logoSrc: "/logo-JCB.png", 
-  },
-  {
-    id: "logo2",
-    name: "野村證券", // 2社目の社名
-    // ▼ publicフォルダにある2社目の画像ファイル名に書き換えてください
-    logoSrc: "/logo-野村證券.png",
-  },
+    name: "Kubota", // ファーストビューに表示する企業
+    logoSrc: "/logo-Kubota.png", 
+  }
 ];
 
 const otherCompanies = [
-   "三井住友海上火災保険株式会社", "日本新薬株式会社", "株式会社ナハト", "AnyMind Group株式会社"
+   "AnyMind Group株式会社", "株式会社船井総合研究所", "株式会社クスリのアオキ", "他2社（未定）"
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
@@ -72,8 +65,9 @@ const HeroSection = () => {
           <div className="mt-2 flex justify-center w-full animate-in fade-in zoom-in duration-1000 delay-300">
              <div className="inline-flex items-center gap-2">
                 <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#B8860B] drop-shadow-sm" />
+                {/* ▼▼▼ 修正：場所をグランフロント大阪に変更 ▼▼▼ */}
                 <span className="text-lg md:text-xl font-serif font-bold text-[#0B1E46] tracking-wider drop-shadow-sm">
-                AP大阪茶屋町 ルームH・I
+                グランフロント大阪（予定）
                 </span>
              </div>
           </div>
@@ -89,10 +83,10 @@ const HeroSection = () => {
         {/* 企業ロゴセクション */}
         <div className="w-screen md:w-full max-w-5xl mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 bg-white py-6 md:py-8 md:rounded-2xl border-y md:border border-slate-200/80 shadow-sm flex flex-col justify-center items-center px-4 sm:px-8">
             
-            {/* 上段：メインロゴ2社 */}
+            {/* 上段：メインロゴ（今回は1社） */}
             <div className="flex justify-center items-center gap-6 md:gap-12 w-full max-w-2xl mb-4 md:mb-6 px-2">
                {mainCompanies.map((company) => (
-                 <div key={company.id} className="flex-1 flex justify-center">
+                 <div key={company.id} className="flex flex-1 justify-center">
                    <img 
                      src={company.logoSrc} 
                      alt={`${company.name} ロゴ`}
@@ -100,8 +94,7 @@ const HeroSection = () => {
                        e.currentTarget.src = `https://placehold.co/400x160/e2e8f0/64748b?text=${encodeURIComponent(company.name)}`;
                        e.currentTarget.className = "w-full max-w-[140px] md:max-w-[200px] h-auto object-contain opacity-70 rounded-md";
                      }}
-                     // ▼▼▼ 修正: 3月版に合わせ、mix-blend-multiply を削除 ▼▼▼
-                     className="w-full max-w-[140px] md:max-w-[200px] h-auto object-contain"
+                     className="w-full max-w-[160px] md:max-w-[240px] h-auto object-contain"
                    />
                  </div>
                ))}
@@ -132,7 +125,7 @@ const HeroSection = () => {
                 <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
                   <img
                     src={src}
-                    alt={`関西就活 Scene ${index + 1}`} // ▼▼▼ 修正: alt属性を変更 ▼▼▼
+                    alt={`関西就活 Scene ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -152,7 +145,7 @@ const HeroSection = () => {
                </div>
                <div className="text-left">
                   <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">LIMIT</p>
-                  <p className="text-sm font-bold text-[#0B1E46]">30名限定</p>
+                  <p className="text-sm font-bold text-[#0B1E46]">50名限定</p>
                </div>
             </div>
 
@@ -174,9 +167,8 @@ const HeroSection = () => {
                     <MapPin size={14} />
                  </div>
                  <div className="text-left">
-                    {/* ▼▼▼ 修正: 対象者の詳細を明記し、改行を追加 ▼▼▼ */}
                     <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">TARGET</p>
-                    <p className="text-sm font-bold text-[#0B1E46]">京大・阪大・神大・海外大・<br />国公立大学院・海外大学院の28卒生</p>
+                    <p className="text-sm font-bold text-[#0B1E46]">関関同立・国公立の28卒生</p>
                  </div>
               </div>
             </div>

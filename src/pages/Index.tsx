@@ -16,7 +16,6 @@ import StickyFooter from "@/components/StickyFooter";
 import MobileMenu from "@/components/MobileMenu";
 import CampaignSection from "@/components/CampaignSection";
 import NextEventSection from "@/components/NextEventSection";
-import SakuraParticles from "@/components/SakuraParticles";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("top");
@@ -98,10 +97,7 @@ const Index = () => {
         }}
       ></div>
 
-      {/* 桜のエフェクト */}
-      <div className="fixed inset-0 z-[1] pointer-events-none">
-        <SakuraParticles />
-      </div>
+      {/* ▼ 修正: 桜のエフェクト部分を完全に削除しました ▼ */}
 
       {/* 左カラム */}
       {/* ▼ 修正: relative を削除し、元々の sticky が効くように戻しました */}
