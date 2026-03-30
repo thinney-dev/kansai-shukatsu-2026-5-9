@@ -18,6 +18,9 @@ const CompaniesSection = () => {
   }, []);
 
   const openModal = (company: any) => {
+    // ComingSoonの場合は開かない（念のためのガード）
+    if (company.isComingSoon) return;
+
     setSelectedCompany(company);
     document.body.style.overflow = 'hidden';
     
@@ -144,40 +147,72 @@ const CompaniesSection = () => {
 
         {/* 企業ロゴカード一覧 */}
         <div className="grid grid-cols-2 gap-4 md:gap-5 mb-8">
-          {companies.map((company: any) => (
-            <button
-              key={company.id} 
-              onClick={() => openModal(company)}
-              className="bg-white rounded-xl border border-slate-200 p-4 flex flex-col items-center justify-center gap-3 md:gap-4 shadow-sm hover:shadow-md transition-all h-44 md:h-48 w-full cursor-pointer group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50"
-            >
-              <div className="w-full h-14 md:h-16 flex items-center justify-center px-2">
-                {company.logoImage ? (
-                  <img 
-                    src={company.logoImage} 
-                    alt={`${company.name} ロゴ`}
-                    className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity mix-blend-multiply" 
-                  />
-                ) : (
-                  <span className="font-black text-2xl md:text-3xl text-slate-300 group-hover:text-slate-400 transition-colors">
-                    {company.name}
-                  </span>
-                )}
-              </div>
-              
-              <div className="w-full space-y-2 text-center shrink-0">
-                 <div className="flex justify-center gap-1 w-full px-1">
-                    {company.tags.map((tag: string, i: number) => (
-                        <span key={i} className="text-[10px] px-1.5 py-0.5 border border-slate-200 rounded bg-slate-50 text-slate-500 font-bold whitespace-nowrap flex-shrink-0 truncate max-w-[100px]">
-                            {tag}
-                        </span>
-                    ))}
-                 </div>
-                 <p className="text-xs md:text-sm font-bold text-slate-600 mt-1 truncate w-full">
-                    {company.name}
-                 </p>
-              </div>
-            </button>
-          ))}
+          {companies.map((company: any) => {
+            // ▼ 修正：isComingSoonがtrueの場合はdivタグにしてアクションを無効化 ▼
+            if (company.isComingSoon) {
+              return (
+                <div
+                  key={company.id} 
+                  className="bg-white rounded-xl border border-slate-200 p-4 flex flex-col items-center justify-center gap-3 md:gap-4 shadow-sm h-44 md:h-48 w-full overflow-hidden"
+                >
+                  <div className="w-full h-14 md:h-16 flex items-center justify-center px-2">
+                    <span className="font-black text-2xl md:text-3xl text-slate-300">
+                      {company.name}
+                    </span>
+                  </div>
+                  
+                  <div className="w-full space-y-2 text-center shrink-0 opacity-50">
+                     <div className="flex justify-center gap-1 w-full px-1">
+                        {company.tags.map((tag: string, i: number) => (
+                            <span key={i} className="text-[10px] px-1.5 py-0.5 border border-slate-200 rounded bg-slate-50 text-slate-500 font-bold whitespace-nowrap flex-shrink-0 truncate max-w-[100px]">
+                                {tag}
+                            </span>
+                        ))}
+                     </div>
+                     <p className="text-xs md:text-sm font-bold text-slate-400 mt-1 truncate w-full">
+                        {company.name}
+                     </p>
+                  </div>
+                </div>
+              );
+            }
+
+            // 通常の企業（タップできるボタン）
+            return (
+              <button
+                key={company.id} 
+                onClick={() => openModal(company)}
+                className="bg-white rounded-xl border border-slate-200 p-4 flex flex-col items-center justify-center gap-3 md:gap-4 shadow-sm hover:shadow-md transition-all h-44 md:h-48 w-full cursor-pointer group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50"
+              >
+                <div className="w-full h-14 md:h-16 flex items-center justify-center px-2">
+                  {company.logoImage ? (
+                    <img 
+                      src={company.logoImage} 
+                      alt={`${company.name} ロゴ`}
+                      className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity mix-blend-multiply" 
+                    />
+                  ) : (
+                    <span className="font-black text-2xl md:text-3xl text-slate-300 group-hover:text-slate-400 transition-colors">
+                      {company.name}
+                    </span>
+                  )}
+                </div>
+                
+                <div className="w-full space-y-2 text-center shrink-0">
+                   <div className="flex justify-center gap-1 w-full px-1">
+                      {company.tags.map((tag: string, i: number) => (
+                          <span key={i} className="text-[10px] px-1.5 py-0.5 border border-slate-200 rounded bg-slate-50 text-slate-500 font-bold whitespace-nowrap flex-shrink-0 truncate max-w-[100px]">
+                              {tag}
+                          </span>
+                      ))}
+                   </div>
+                   <p className="text-xs md:text-sm font-bold text-slate-600 mt-1 truncate w-full">
+                      {company.name}
+                   </p>
+                </div>
+              </button>
+            );
+          })}
         </div>
 
         <p className="text-[10px] text-slate-400 text-center font-medium">
