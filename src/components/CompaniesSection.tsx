@@ -44,7 +44,6 @@ const CompaniesSection = () => {
     }
   };
 
-  // ▼▼▼ 4月LP用：出展企業リスト（魅力的な数値をリサーチして組み込みました） ▼▼▼
   const companies = [
     { 
       id: 1, 
