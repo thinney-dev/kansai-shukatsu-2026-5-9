@@ -11,26 +11,26 @@ const OverviewSection = () => {
       content: (
         <div className="space-y-4">
           <div>
-            <p className="font-bold mb-1">ミーティングスペースAP大阪茶屋町ルームH・I</p>
+            <p className="font-bold mb-1">グランフロント大阪北館タワーC 8階　Room C03,4</p>
             <p className="text-sm text-slate-500">
-              〒530-0013 大阪府大阪市北区茶屋町１−２７ ABC-MART梅田ビル 8F
+              〒530-0013 大阪府大阪市北区梅田3-2-1 グランフロント大阪北館タワーC 8階　Room C03
             </p>
             <p className="text-xs text-[#B8860B] mt-1 flex items-center gap-1 font-bold">
               <MapPin className="w-3 h-3" />
               大阪梅田駅 1分 / 大阪駅 3分
             </p>
           </div>
-          {/* Googleマップ埋め込み */}
-          <div className="w-full h-48 bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
+          {/* ▼▼▼ 修正：Googleマップ埋め込み（JSX記法に変換・レスポンシブ維持） ▼▼▼ */}
+          <div className="w-full h-48 md:h-64 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 mt-2">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640.0053472253137!2d135.49698449839477!3d34.7049102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e693c9434093%3A0x4ebbe9d36594c0a8!2z44Of44O844OG44Kj44Oz44Kw44K544Oa44O844K5QVDlpKfpmKrojLblsYvnlLo!5e0!3m2!1sja!2sjp!4v1769416781372!5m2!1sja!2sjp" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1564.1141383258237!2d135.49340150877455!3d34.70613884994235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e70063e8d081%3A0x23702cb51a614da2!2z44Kw44Op44Oz44OV44Ot44Oz44OI5aSn6ZiqIOOCv-ODr-ODvEM!5e0!3m2!1sja!2sjp!4v1774847969107!5m2!1sja!2sjp" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="ミーティングスペースAP大阪茶屋町 地図"
+              title="グランフロント大阪 カンファレンスルームタワーC 地図"
             ></iframe>
           </div>
         </div>
@@ -41,7 +41,7 @@ const OverviewSection = () => {
       content: (
         <ul className="list-disc list-outside pl-4 space-y-2">
           {/* ▼▼▼ 修正：参加対象を3月版のフォーマットに合わせる ▼▼▼ */}
-          <li>京大・阪大・神大・海外大・国公立大学院・海外大学院に通う学生</li>
+          <li>関関同立・京大・阪大・神大・海外大・国公立大学院・海外大学院に通う学生</li>
           <li>2027年4月から2028年3月に大学・大学院を卒業または卒業見込みの方</li>
           <li>
             個別事前選考面談に参加できる方
@@ -52,7 +52,7 @@ const OverviewSection = () => {
     },
     {
       label: "参加定員",
-      content: "30名（選考面談あり）"
+      content: "50名（選考面談あり）"
     },
     {
       label: "参加費",
@@ -68,7 +68,7 @@ const OverviewSection = () => {
     },
     {
       label: "持ち物",
-      content: "筆記用具、スマートフォン"
+      content: "学生証・筆記用具・スマートフォン"
     },
   ];
 

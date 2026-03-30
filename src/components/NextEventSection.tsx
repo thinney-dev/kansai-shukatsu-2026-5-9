@@ -16,12 +16,12 @@ const NextEventSection = () => {
             {/* ラベル */}
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 mb-1 bg-white border border-slate-100 px-4 py-2 rounded-full shadow-sm">
               <CalendarDays className="w-4 h-4 text-[#B8860B]" />
-              4月26日の日程が合わない方へ
+              5月9日の日程が合わない方へ
             </span>
             
             {/* 見出し */}
             <h3 className="text-xl md:text-2xl font-serif font-bold text-[#0B1E46] leading-relaxed">
-              <span className="text-[#B8860B] pb-1 mr-1">5月</span> <br />
+              <span className="text-[#B8860B] pb-1 mr-1">6月</span> <br />
               開催枠も現在準備中です
             </h3>
             
@@ -35,7 +35,7 @@ const NextEventSection = () => {
             <div className="w-full sm:w-auto flex justify-center">
               <div className="inline-flex items-center justify-center gap-2 bg-slate-200 text-slate-500 px-8 py-4 rounded-full font-bold text-sm shadow-inner cursor-not-allowed w-full sm:w-auto whitespace-nowrap">
                 <Clock className="w-4 h-4" />
-                5月開催の詳細 Coming Soon...
+                6月開催の詳細 Coming Soon...
               </div>
             </div>
             
