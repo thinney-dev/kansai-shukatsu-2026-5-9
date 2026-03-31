@@ -31,7 +31,7 @@ const ParticipateSection = () => {
               <Button 
                 className="w-full max-w-sm bg-purple-600 hover:bg-purple-500 text-white font-bold h-12 rounded shadow-md text-xl transition-transform hover:scale-105"
                 // フォームのリンク（前回設定済み）
-                onClick={() => window.open('https://forms.gle/xjLXrbdL2yo4htW48', '_blank')}
+                onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
               >
                 ENTRYはこちら
                 <ExternalLink className="ml-2 w-5 h-5" />

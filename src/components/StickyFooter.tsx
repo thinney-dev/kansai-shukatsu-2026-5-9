@@ -27,7 +27,7 @@ const StickyFooter = () => {
         
         {/* ENTRYボタン */}
         <Button
-          onClick={() => window.open('https://forms.gle/zwj7S6ybqDBFmn3N9', '_blank')}
+          onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
           className="flex-1 bg-[#9333EA] hover:bg-[#7E22CE] text-white font-bold h-14 rounded-xl shadow-lg transition-transform active:scale-95 text-xl tracking-wide"
         >
           ENTRYはこちら

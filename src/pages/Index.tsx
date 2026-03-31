@@ -16,15 +16,18 @@ import StickyFooter from "@/components/StickyFooter";
 import MobileMenu from "@/components/MobileMenu";
 import CampaignSection from "@/components/CampaignSection";
 import NextEventSection from "@/components/NextEventSection";
+// ▼ 修正：作成した過去実績コンポーネントをインポート ▼
+import PastEventsSection from "@/components/PastEventsSection";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("top");
 
   // スクロール連動機能
   useEffect(() => {
+    // ▼ 修正："past-events" を配列に追加 ▼
     const sectionIds = [
       "top", "features", "companies", "benefits", "timetable",
-      "participate", "campaign", "overview", "voice", "faq"
+      "participate", "campaign", "overview", "past-events", "voice", "faq"
     ];
 
     const observerOptions = {
@@ -76,6 +79,8 @@ const Index = () => {
     { id: "participate", label: "参加方法", en: "HOW TO PARTICIPATE" },
     { id: "campaign", label: "キャンペーン", en: "CAMPAIGN" },
     { id: "overview", label: "開催概要", en: "OVERVIEW" },
+    // ▼ 修正：ナビゲーションに過去実績を追加 ▼
+    { id: "past-events", label: "過去実績", en: "PAST EVENTS" },
     { id: "voice", label: "学生の声", en: "VOICE OF STUDENTS" },
     { id: "faq", label: "よくある質問", en: "FAQ" },
   ];
@@ -97,10 +102,7 @@ const Index = () => {
         }}
       ></div>
 
-      {/* ▼ 修正: 桜のエフェクト部分を完全に削除しました ▼ */}
-
       {/* 左カラム */}
-      {/* ▼ 修正: relative を削除し、元々の sticky が効くように戻しました */}
       <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center items-center z-10 px-6">
         <div className="flex flex-col justify-between items-center w-full h-[75vh] min-h-[680px] py-10">
             <div className="flex-1 flex items-center justify-center w-full">
@@ -129,6 +131,10 @@ const Index = () => {
           <div id="campaign"><CampaignSection /></div>
           <div id="overview"><OverviewSection /></div>
           <NextEventSection />
+          
+          {/* ▼ 修正：ここに過去実績セクションを配置 ▼ */}
+          <div id="past-events"><PastEventsSection /></div>
+
           <div id="voice"><VoiceSection /></div>
           <div id="faq"><FAQSection /></div>
 
@@ -139,7 +145,6 @@ const Index = () => {
       </main>
 
       {/* 右カラム */}
-      {/* ▼ 修正: relative を削除し、元々の sticky が効くように戻しました */}
       <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center pl-8 xl:pl-12 z-10">
         <div className="w-full max-w-xs space-y-10">
             <nav className="space-y-5 border-l-2 border-slate-300 pl-6">
@@ -164,7 +169,7 @@ const Index = () => {
             <div className="space-y-3 pt-4">
                 <Button 
                     className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 rounded shadow-lg transition-transform hover:scale-105 text-lg"
-                    onClick={() => window.open('https://forms.gle/9RX66kmnapDjiokf9', '_blank')}
+                    onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
                 >
                     <span className="bg-white text-purple-600 text-xs px-2 py-0.5 rounded font-bold mr-3">簡単1分</span>
                     ENTRYはこちら
