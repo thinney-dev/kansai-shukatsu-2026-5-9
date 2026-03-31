@@ -1,7 +1,7 @@
 const TimetableSection = () => {
   const schedule = [
     {
-      time: "12:45",
+      time: "13:00",
       title: "受付開始",
       description: ""
     },

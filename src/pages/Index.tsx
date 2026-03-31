@@ -79,9 +79,7 @@ const Index = () => {
     { id: "participate", label: "参加方法", en: "HOW TO PARTICIPATE" },
     { id: "campaign", label: "キャンペーン", en: "CAMPAIGN" },
     { id: "overview", label: "開催概要", en: "OVERVIEW" },
-    // ▼ 修正：ナビゲーションに過去実績を追加 ▼
-    { id: "past-events", label: "過去実績", en: "PAST EVENTS" },
-    { id: "voice", label: "学生の声", en: "VOICE OF STUDENTS" },
+    
     { id: "faq", label: "よくある質問", en: "FAQ" },
   ];
 
