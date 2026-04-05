@@ -14,12 +14,17 @@ const mainCompanies = [
   {
     id: "logo1",
     name: "Kubota", // ファーストビューに表示する企業
-    logoSrc: "/logo-Kubota.png", 
+    logoSrc: "/logo-Kubota.png",
+  },
+  {
+    id: "logo2",
+    name: "Leverages", // ファーストビューに表示する企業
+    logoSrc: "/logo-Leverages.png", 
   }
 ];
 
 const otherCompanies = [
-   "AnyMind Group株式会社", "株式会社船井総合研究所", "株式会社クスリのアオキ", "他2社（未定）"
+   "AnyMind Group", "船井総合研究所", "クスリのアオキ", "他1社（未定）"
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
