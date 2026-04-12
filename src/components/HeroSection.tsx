@@ -29,7 +29,7 @@ const mainCompanies = [
 ];
 
 const otherCompanies = [
-   "AnyMind Group", "船井総合研究所", "クスリのアオキ"
+  "船井総合研究所", "クスリのアオキ","他、随時公開中..." 
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
