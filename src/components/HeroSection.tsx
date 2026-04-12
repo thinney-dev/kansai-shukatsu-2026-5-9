@@ -20,11 +20,16 @@ const mainCompanies = [
     id: "logo2",
     name: "Leverages", // ファーストビューに表示する企業
     logoSrc: "/logo-Leverages.png", 
+  },
+  {
+    id: "logo3",
+    name: "Omron", // ファーストビューに表示する企業
+    logoSrc: "/logo-omron.png", 
   }
 ];
 
 const otherCompanies = [
-   "AnyMind Group", "船井総合研究所", "クスリのアオキ", "他1社（未定）"
+   "AnyMind Group", "船井総合研究所", "クスリのアオキ"
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
@@ -88,8 +93,8 @@ const HeroSection = () => {
         {/* 企業ロゴセクション */}
         <div className="w-screen md:w-full max-w-5xl mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 bg-white py-6 md:py-8 md:rounded-2xl border-y md:border border-slate-200/80 shadow-sm flex flex-col justify-center items-center px-4 sm:px-8">
             
-            {/* 上段：メインロゴ（今回は1社） */}
-            <div className="flex justify-center items-center gap-6 md:gap-12 w-full max-w-2xl mb-4 md:mb-6 px-2">
+            {/* 上段：メインロゴ */}
+            <div className="flex justify-center items-center gap-4 md:gap-10 w-full max-w-4xl mb-4 md:mb-6 px-2">
                {mainCompanies.map((company) => (
                  <div key={company.id} className="flex flex-1 justify-center">
                    <img 
@@ -99,7 +104,7 @@ const HeroSection = () => {
                        e.currentTarget.src = `https://placehold.co/400x160/e2e8f0/64748b?text=${encodeURIComponent(company.name)}`;
                        e.currentTarget.className = "w-full max-w-[140px] md:max-w-[200px] h-auto object-contain opacity-70 rounded-md";
                      }}
-                     className="w-full max-w-[160px] md:max-w-[240px] h-auto object-contain"
+                     className="w-full max-w-[260px] md:max-w-[380px] h-auto object-contain"
                    />
                  </div>
                ))}
