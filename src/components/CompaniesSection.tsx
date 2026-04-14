@@ -81,7 +81,7 @@ const CompaniesSection = () => {
     },
     { 
       id: 3, 
-      name: "Omron", 
+      name: "オムロングループ", 
       tags: ["センシング技術", "制御機器"], 
       logoImage: "/logo-omron.png",
       url: "https://www.omron.com/jp/ja/",

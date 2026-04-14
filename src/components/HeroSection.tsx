@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#B8860B] drop-shadow-sm" />
                 {/* ▼▼▼ 修正：場所をグランフロント大阪に変更 ▼▼▼ */}
                 <span className="text-lg md:text-xl font-serif font-bold text-[#0B1E46] tracking-wider drop-shadow-sm">
-                グランフロント大阪（予定）
+                グランフロント大阪
                 </span>
              </div>
           </div>
