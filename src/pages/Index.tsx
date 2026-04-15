@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, ExternalLink } from "lucide-react";
+// ▼ 修正：ChevronRight を追加 ▼
+import { ArrowRight, ExternalLink, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -16,7 +17,6 @@ import StickyFooter from "@/components/StickyFooter";
 import MobileMenu from "@/components/MobileMenu";
 import CampaignSection from "@/components/CampaignSection";
 import NextEventSection from "@/components/NextEventSection";
-// ▼ 修正：作成した過去実績コンポーネントをインポート ▼
 import PastEventsSection from "@/components/PastEventsSection";
 
 const Index = () => {
@@ -24,7 +24,6 @@ const Index = () => {
 
   // スクロール連動機能
   useEffect(() => {
-    // ▼ 修正："past-events" を配列に追加 ▼
     const sectionIds = [
       "top", "features", "companies", "benefits", "timetable",
       "participate", "campaign", "overview", "past-events", "voice", "faq"
@@ -79,12 +78,10 @@ const Index = () => {
     { id: "participate", label: "参加方法", en: "HOW TO PARTICIPATE" },
     { id: "campaign", label: "キャンペーン", en: "CAMPAIGN" },
     { id: "overview", label: "開催概要", en: "OVERVIEW" },
-    
     { id: "faq", label: "よくある質問", en: "FAQ" },
   ];
 
   return (
-    // ▼ 修正: overflow-hidden を削除しました（stickyを妨害するため）
     <div className="flex min-h-screen w-full bg-transparent font-sans text-[#0B1E46] selection:bg-purple-100 relative justify-center">
       
       {/* スマホ用メニュー */}
@@ -110,7 +107,35 @@ const Index = () => {
                 className="w-full max-w-[80%] object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500"
                 />
             </div>
-            <div className="w-full flex justify-center translate-y-12">
+            <div className="w-full flex flex-col items-center translate-y-4 xl:translate-y-8">
+                
+                {/* ===== PC版 SNS導線 ===== */}
+                <div className="flex flex-col items-center gap-3 mb-5 px-2 w-full">
+                  <p className="text-xs xl:text-sm text-[#0B1E46] font-bold tracking-wide text-center">
+                    最新の登壇企業情報や就活対策を配信中！
+                  </p>
+                  <div className="flex flex-row gap-2 xl:gap-3 justify-center w-full">
+                    {/* X (旧Twitter) */}
+                    <a
+                      href="https://x.com/kansai_mlc?s=21&t=axJ02Uz3Tn08l-b1j33" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-[100px] xl:w-[120px] h-[44px] xl:h-[48px] bg-black hover:opacity-80 transition-opacity rounded-lg shadow-sm group"
+                    >
+                      <img src="/logo-X.png" alt="Xロゴ" className="h-4 xl:h-5 w-auto object-contain group-hover:scale-110 transition-transform" />
+                    </a>
+                    {/* Instagram */}
+                    <a
+                      href="https://www.instagram.com/kansaishukatsu_mlc/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-[100px] xl:w-[120px] h-[44px] xl:h-[48px] bg-white hover:opacity-80 transition-opacity border border-slate-200 rounded-lg shadow-sm group"
+                    >
+                      <img src="/logo-instagram.png" alt="Instagramロゴ" className="h-5 xl:h-6 w-auto object-contain group-hover:scale-110 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+
                 <CompanyInfoCard />
             </div>
         </div>
@@ -130,14 +155,38 @@ const Index = () => {
           <div id="overview"><OverviewSection /></div>
           <NextEventSection />
           
-          {/* ▼ 修正：ここに過去実績セクションを配置 ▼ */}
           <div id="past-events"><PastEventsSection /></div>
 
           <div id="voice"><VoiceSection /></div>
           <div id="faq"><FAQSection /></div>
 
-          {/* スマホ下部のグレー背景を透明に変更 */}
-          <div className="lg:hidden w-full px-4 py-12 flex justify-center bg-transparent">
+          {/* ▼ 修正：スマホ版 SNS導線を追加（CompanyInfoCardの上） ▼ */}
+          <div className="lg:hidden w-full px-4 pt-8 pb-12 flex flex-col items-center gap-8 bg-transparent">
+            
+            <div className="flex flex-col items-center gap-4 w-full">
+              <p className="text-sm font-bold text-[#0B1E46] tracking-wide text-center">
+                最新の登壇企業情報や就活対策を配信中！
+              </p>
+              <div className="flex flex-row gap-4 justify-center w-full">
+                <a
+                  href="https://x.com/kansai_mlc?s=21&t=axJ02Uz3Tn08l-b1j33" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-[130px] h-[50px] bg-black hover:opacity-80 transition-opacity rounded-xl shadow-sm group"
+                >
+                  <img src="/logo-X.png" alt="Xロゴ" className="h-5 w-auto object-contain group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://www.instagram.com/kansaishukatsu_mlc/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-[130px] h-[50px] bg-white hover:opacity-80 transition-opacity border border-slate-200 rounded-xl shadow-sm group"
+                >
+                  <img src="/logo-instagram.png" alt="Instagramロゴ" className="h-6 w-auto object-contain group-hover:scale-110 transition-transform" />
+                </a>
+              </div>
+            </div>
+
             <CompanyInfoCard />
           </div>
       </main>
@@ -167,6 +216,7 @@ const Index = () => {
             <div className="space-y-3 pt-4">
                 <Button 
                     className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 rounded shadow-lg transition-transform hover:scale-105 text-lg"
+                    // ▼ 5月用のフォームリンクを維持 ▼
                     onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
                 >
                     <span className="bg-white text-purple-600 text-xs px-2 py-0.5 rounded font-bold mr-3">簡単1分</span>
