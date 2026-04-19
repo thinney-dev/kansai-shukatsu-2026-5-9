@@ -166,7 +166,7 @@ const HeroSection = () => {
                </div>
                <div className="text-left">
                   <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">STYLE</p>
-                  <p className="text-sm font-bold text-[#0B1E46]">招待制</p>
+                  <p className="text-sm font-bold text-[#0B1E46]">特別選考あり</p>
                </div>
             </div>
 
