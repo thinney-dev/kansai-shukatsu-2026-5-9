@@ -50,7 +50,7 @@ const CompaniesSection = () => {
       name: "Kubota", 
       tags: ["食料・水・環境", "グローバル"], 
       logoImage: "/logo-Kubota.png",
-      url: "https://www.jcb.co.jp/?link_id=cojp_logo",
+      url: "https://www.kubota.co.jp/",
       details: {
         catchphrase: "食料・水・環境の課題解決で、地球と人類の未来を支える",
         stats: [
@@ -101,7 +101,7 @@ const CompaniesSection = () => {
       name: "船井総合研究所", 
       tags: ["経営コンサル", "若手裁量"], 
       logoImage: "/logo-船井総研.png",
-      url: "https://www.ms-ins.com/",
+      url: "https://www.funaisoken.co.jp/",
       details: {
         catchphrase: "中堅・中小企業の「サステナグロース（持続的成長）」を実現する",
         stats: [
@@ -118,7 +118,7 @@ const CompaniesSection = () => {
       name: "クスリのアオキ", 
       tags: ["食料＆医薬品", "1000店舗超"], 
       logoImage: "/logo-クスリのアオキ.png",
-      url: "https://www.nippon-shinyaku.co.jp/",
+      url: "https://www.kusuri-aoki.co.jp/",
       details: {
         catchphrase: "「健康と美と衛生」を通しての社会貢献と、近くて便利な生活拠点づくり",
         stats: [
