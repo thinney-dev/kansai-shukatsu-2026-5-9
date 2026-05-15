@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
+import React from "react";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,18 +97,15 @@ const MobileMenu = () => {
             ))}
           </div>
           
-          {/* CVボタン */}
-          <div className="mt-8 pb-8 space-y-4">
-            <button
-                // ▼▼▼ リンク修正 ▼▼▼
-                onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
-                className="w-full bg-purple-600 text-white font-bold py-4 rounded-lg shadow-md active:scale-95 transition-transform"
-            >
-                ENTRYはこちら
-            </button>
-            <p className="text-center text-xs text-slate-400">
-                簡単1分でエントリー完了
-            </p>
+           {/* CVボタン（募集終了に変更） */}
+           <div className="mt-8 pb-8 space-y-4">
+            <div className="w-full bg-[#4a4a4a] text-white font-bold py-4 px-4 rounded-lg shadow-md flex items-center justify-between cursor-not-allowed">
+              <div className="flex items-center gap-4">
+                  <span className="bg-white text-[#333333] text-xs px-2 py-1 font-bold">満員御礼</span>
+                  <span className="text-lg tracking-widest">募集終了</span>
+              </div>
+              <ChevronRight className="w-6 h-6 text-white" />
+            </div>
           </div>
         </div>
       </div>

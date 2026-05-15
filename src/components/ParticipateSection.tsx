@@ -1,4 +1,4 @@
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronDown, ChevronRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ParticipateSection = () => {
@@ -31,16 +31,16 @@ const ParticipateSection = () => {
                 申込フォームを送信
               </h3>
               <p className="text-sm text-slate-600 mb-6 font-medium">
-                下のボタンをタップして申込フォームを記入・送信。
+                現在、当イベントの募集は終了しております。
               </p>
-              <Button 
-                className="w-full max-w-sm bg-purple-600 hover:bg-purple-500 text-white font-bold h-12 rounded shadow-md text-xl transition-transform hover:scale-105"
-                // フォームのリンク（前回設定済み）
-                onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
-              >
-                ENTRYはこちら
-                <ExternalLink className="ml-2 w-5 h-5" />
-              </Button>
+              {/* ▼ 修正：募集終了のデザインに変更 ▼ */}
+              <div className="w-full max-w-sm bg-[#4a4a4a] text-white font-bold h-14 rounded-md shadow-md flex items-center justify-between px-4 cursor-not-allowed">
+                <div className="flex items-center gap-4">
+                  <span className="bg-white text-[#333333] text-xs md:text-sm px-2 py-1 font-bold">満員御礼</span>
+                  <span className="text-lg tracking-widest">募集終了</span>
+                </div>
+                <ChevronRight className="w-6 h-6 text-white" />
+              </div>
            </div>
 
            {/* 矢印 */}

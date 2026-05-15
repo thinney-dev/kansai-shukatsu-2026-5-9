@@ -214,15 +214,14 @@ const Index = () => {
             </nav>
 
             <div className="space-y-3 pt-4">
-                <Button 
-                    className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 rounded shadow-lg transition-transform hover:scale-105 text-lg"
-                    // ▼ 5月用のフォームリンクを維持 ▼
-                    onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
-                >
-                    <span className="bg-white text-purple-600 text-xs px-2 py-0.5 rounded font-bold mr-3">簡単1分</span>
-                    ENTRYはこちら
-                    <ExternalLink className="ml-2 w-5 h-5" />
-                </Button>
+                {/* ▼▼▼ 修正：PC版右カラムのボタンを募集終了のデザインに変更 ▼▼▼ */}
+                <div className="w-full bg-[#4a4a4a] text-white font-bold h-14 rounded shadow-lg flex items-center justify-between px-4 cursor-not-allowed">
+                    <div className="flex items-center gap-3">
+                      <span className="bg-white text-[#333333] text-xs px-2 py-1 font-bold">満員御礼</span>
+                      <span className="text-lg tracking-widest">募集終了</span>
+                    </div>
+                    <ChevronRight className="w-6 h-6 text-white" />
+                </div>
 
                 <Button 
                     variant="outline"
